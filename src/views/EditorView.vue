@@ -90,7 +90,8 @@
 
 
                 <input type="submit" class="bg-green-500 text-white hover:bg-green-600 rounded-xl p-4 px-8 text-xl" value="Изменить"/>
-
+                <!-- <input @click="delete" class="text-red-800 p-4 px-8 text-xl" value="Удалить"/> -->
+                <button @click="deleteBook" class="text-red-800 p-4 px-8 text-xl" >Удалить</button>
             </form>
 
 
@@ -121,7 +122,17 @@
                     this.data = resp.data
                     console.log(this.data)
                 })
-            }
+            },
+            async deleteBook() {
+                await axios.post(`${process.env.VUE_APP_API_URL}/deleteBook/` + this.id)
+                    .then(resp => {
+                        console.log(this.data)
+                        location.href = '/123123/sdfsd'
+                    })
+                    .catch(e => {
+                        console.log(e)
+                    })
+            },
         },
         async mounted() {
             if(JSON.parse(localStorage.kitobtj).username !== 'admin') {
