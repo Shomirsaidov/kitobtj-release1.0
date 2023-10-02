@@ -18,7 +18,7 @@
         <h2>© {{ new Date().getFullYear() }}, KITOB.tj</h2>
         <h2 style="color: rgb(60, 146, 216);">
             <router-link :to="'/me'">
-                Shomirsaidov Abubakr presents
+                Powered by Doleap Team 
             </router-link>
         </h2>
     </div>
