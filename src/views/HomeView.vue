@@ -14,6 +14,8 @@
       <img src="../assets/arrow-right.svg" alt="" width="40">
     </div>
 
+    <img v-if="data.sales.length == 0" src="../assets/nothing.png" alt="nothing found" width="300">
+    
     <div class="flex items-stretch space-x-4 overflow-x-auto slider" style="scroll-snap-type: x mandatory;">
 
       <div class="card border-2 p-4 rounded-lg hover:shadow-xl flex flex-col justify-between" v-for="(book,index) in data.sales"
@@ -71,6 +73,8 @@
       <img src="../assets/arrow-right.svg" alt="" width="40">
     </div>
 
+    <img v-if="data.newBooks.length == 0" src="../assets/nothing.png" alt="nothing found" width="300">
+
     <div class="flex items-stretch space-x-4 overflow-x-auto slider" style="scroll-snap-type: x mandatory;">
 
       <div class="card border-2 p-4 rounded-lg hover:shadow-xl flex flex-col justify-between" v-for="(book,index) in data.newBooks"
@@ -115,6 +119,8 @@
       <img src="../assets/arrow-right.svg" alt="" width="40">
     </div>
 
+    <img v-if="data.topSelling.length == 0" src="../assets/nothing.png" alt="nothing found" width="300">
+    
     <div class="flex items-stretch space-x-4 overflow-x-auto slider" style="scroll-snap-type: x mandatory;">
 
       <div class="card border-2 p-4 rounded-lg hover:shadow-xl flex flex-col justify-between" v-for="(book,index) in data.topSelling"
