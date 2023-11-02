@@ -6,9 +6,11 @@
         <img src="../assets/arrow-right.svg" alt="" width="40">
         </div>
 
-        <div class="flex justify-center" v-if="data.length == 0">
+        <div class="flex justify-center" v-if="data == null">
             <img src="../assets/loader.gif" alt="">
         </div>
+
+        <img v-if="data.length == 0" src="../assets/nothing.png" alt="nothing found" width="300">
 
         <div class="flex items-stretch space-x-4 overflow-x-auto slider" style="scroll-snap-type: x mandatory;">
 
