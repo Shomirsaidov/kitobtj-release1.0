@@ -6,7 +6,7 @@
         <img src="../assets/arrow-right.svg" alt="" width="40">
         </div>
 
-        <div class="flex justify-center" v-if="data == null">
+        <div class="flex justify-center" v-if="data.length == 0">
             <img src="../assets/loader.gif" alt="">
         </div>
 
