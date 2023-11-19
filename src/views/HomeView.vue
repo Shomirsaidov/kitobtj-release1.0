@@ -83,9 +83,14 @@
           <div class="book_images" style="min-height: 230px;">
             <img :src="book.cover" alt="" height="280" width="150">
           </div>
+
+          <h3 class="text-start text-md mt-4 mb-2 text-grey-500 line-through" v-if="book.sales_per > 0">{{ book.prev_price }} c.</h3>
+          
           <div class="flex items-center justify-between mt-4">
             <h2 class="text-start text-2xl mb-2 text-red-500">{{ book.cur_price }} c.</h2>
-            
+            <div class="px-2 bg-red-700 rounded-full" v-if="book.sales_per > 0">
+              <h4 class="text-lg text-white font-semibold">{{ book.sales_per }} %</h4>
+            </div>
           </div>
 
           <h1 class="text-start text-sm font-semibold break-words" style="max-width: 120px;">{{ book.name }}</h1>
