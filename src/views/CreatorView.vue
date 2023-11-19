@@ -100,7 +100,7 @@
                 description: '',
                 category: '',
                 cur_price: '',
-                prev_price: '',
+                prev_price: 0,
                 sales_per: '',
                 tags: '',
                 cover: '',
