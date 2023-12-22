@@ -121,9 +121,17 @@
  
         },
         async mounted() {
-            if(JSON.parse(localStorage.kitobtj).username !== 'admin') {
-                this.$router.back()
-            }           
+            if(localStorage.kitobtj !== undefined) {
+                let user_token = JSON.parse(localStorage.kitobtj).token
+                await axios.post(`${this.apiUrl}/getRole`, {user_token})
+                .then(r => {
+                    if(r.role !== 'admin') {
+                        this.$router.back()
+                    }
+                })
+            }   
+            
+           
         },
         computed: {
         }
