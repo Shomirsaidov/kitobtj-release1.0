@@ -180,12 +180,16 @@
       },
       isAdmin() {
         if(localStorage.kitobtj !== undefined) {
-          if(JSON.parse(localStorage.kitobtj).username == 'admin') {
-            console.log('admin welcome !!!')
-            return true 
-          }
-        }
-        return false
+                let user_token = JSON.parse(localStorage.kitobtj).token
+                await axios.post(`${this.apiUrl}/getRole`, {user_token})
+                .then(r => {
+                    if(r.role !== 'admin') {
+                        return false
+                    } 
+                    return true
+                })
+        }   
+            
       }
     }
   }
