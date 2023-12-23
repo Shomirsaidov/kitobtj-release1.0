@@ -135,10 +135,17 @@
             },
         },
         async mounted() {
-            if(JSON.parse(localStorage.kitobtj).username !== 'admin') {
-                this.$router.back()
-            }
 
+	    if(localStorage.kitobtj !== undefined) {
+                let user_token = JSON.parse(localStorage.kitobtj).token
+                await axios.post(`${process.env.VUE_APP_API_URL}/getRole`, {user_token})
+                .then(r => {
+                    if(r.role !== 'admin') {
+                        this.$router.back()
+                    }
+		})
+            }   
+		
             this.id = this.$route.params.id
             console.log(this.id)
             this.loadBookForEditing()
