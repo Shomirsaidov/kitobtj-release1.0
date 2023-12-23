@@ -140,7 +140,7 @@
                 let user_token = JSON.parse(localStorage.kitobtj).token
                 await axios.post(`${process.env.VUE_APP_API_URL}/getRole`, {user_token})
                 .then(r => {
-                    if(r.role !== 'admin') {
+                    if(r.length == 0) {
                         this.$router.back()
                     }
 		})
