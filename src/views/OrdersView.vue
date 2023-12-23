@@ -98,7 +98,8 @@
             denyCause: '',
             orderToEdit: null,
             editMode: false,
-            editAction: ''
+            editAction: '',
+	    apiUrl: process.env.VUE_APP_API_URL
         }),
         async mounted() {
 
