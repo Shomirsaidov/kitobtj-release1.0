@@ -101,6 +101,18 @@
             editAction: ''
         }),
         async mounted() {
+
+	    if(localStorage.kitobtj !== undefined) {
+                let user_token = JSON.parse(localStorage.kitobtj).token
+                await axios.post(`${this.apiUrl}/getRole`, {user_token})
+                .then(r => {
+                    if(r.role !== 'admin') {
+                        this.$router.back()
+                    }
+                })
+            }   
+            
+		
             await axios.get(`${process.env.VUE_APP_API_URL}/orders?limit=none`)
                 .then(resp => {
                 this.data = resp.data;
