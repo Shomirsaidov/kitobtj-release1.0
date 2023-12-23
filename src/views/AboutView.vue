@@ -135,7 +135,8 @@
     },  
     data: () => ({
       info: null,
-      description_collapsed: true
+      description_collapsed: true,
+      apiUrl: process.env.VUE_APP_API_URL
     }),
     methods: {
       addToCart(id) {
