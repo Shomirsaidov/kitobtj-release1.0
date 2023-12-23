@@ -123,8 +123,10 @@
         async mounted() {
             if(localStorage.kitobtj !== undefined) {
                 let user_token = JSON.parse(localStorage.kitobtj).token
+		
                 await axios.post(`${this.apiUrl}/getRole`, {user_token})
                 .then(r => {
+		    console.log(r)
                     if(r.length == 0) {
                         this.$router.back()
                     }
