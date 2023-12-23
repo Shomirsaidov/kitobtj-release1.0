@@ -182,7 +182,7 @@
       isAdmin() {
         if(localStorage.kitobtj !== undefined) {
                 let user_token = JSON.parse(localStorage.kitobtj).token
-                await axios.post(`${this.apiUrl}/getRole`, {user_token})
+                await axios.post(`${process.env.VUE_APP_API_URL}/getRole`, {user_token})
                 .then(r => {
                     if(r.role !== 'admin') {
                         return false
