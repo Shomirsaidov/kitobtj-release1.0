@@ -15,7 +15,7 @@
       <div class="flex items-center mt-4 mb-2 space-x-2 mb-4 flex-wrap">
         <h3 class="text-sm font-semibold px-4 text-white rounded-sm" style="background: #785eea; max-width: 200px;" v-for="tag in info.tags">{{ tag }}</h3>
       </div>
-      <h1 class="text-start text-xl font-semibold" style="color: #f34a57;">{{ info.name }}</h1>
+      <h1 class="text-start text-xl font-semibold" style="color: #f34a57; max-width: 500px;">{{ info.name }}</h1>
       <h1 class="text-start text-lg" style="color: #26a9e0;">{{ info.author }}</h1>
 
       
