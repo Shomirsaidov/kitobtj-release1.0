@@ -107,7 +107,7 @@
                 let user_token = JSON.parse(localStorage.kitobtj).token
                 await axios.post(`${this.apiUrl}/getRole`, {user_token})
                 .then(r => {
-                     if(r.role == 'admin') {
+                     if(r.data.role == 'admin') {
                         console.log('Welcome dear admin !')
                     } else {
 			this.$router.back()   
