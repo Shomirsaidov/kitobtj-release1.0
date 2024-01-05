@@ -184,10 +184,10 @@
                 let user_token = JSON.parse(localStorage.kitobtj).token
                 await axios.post(`${process.env.VUE_APP_API_URL}/getRole`, {user_token})
                 .then(r => {
-                    if(r.role !== 'admin') {
-                        return false
+                    if(r.data.role == 'admin') {
+                        return true
                     } else {
-                      return true  
+                      return false
                     }
                     
                 })
