@@ -186,8 +186,10 @@
                 .then(r => {
                     if(r.role !== 'admin') {
                         return false
-                    } 
-                    return true
+                    } else {
+                      return true  
+                    }
+                    
                 })
         }   
             
