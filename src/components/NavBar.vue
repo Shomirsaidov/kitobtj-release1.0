@@ -27,7 +27,7 @@
         <!-- <img src="../assets/bookmark.svg" alt="" width="30" @click="navigateTo('/saved')"> -->
         <div class="flex items-stretch">
           <img src="../assets/shopping-bag.svg" alt="" width="30" @click="navigateTo('/shopping')">
-          <div class="rounded-full bg-red-800 px-2" style="position: relative; top: -17px; left: -13px">
+          <div class="rounded-full bg-red-800 px-2" v-if="$store.state.cartBooks.length > 0" style="position: relative; top: -17px; left: -13px">
             <span class="text-white text-xs font-bold">{{ $store.state.cartBooks.length }}</span>
           </div>
         </div>
