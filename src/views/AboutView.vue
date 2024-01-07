@@ -191,7 +191,9 @@
                     }
                     
                 })
-        }   
+        } else {
+          return false
+        }
             
       }
     }
