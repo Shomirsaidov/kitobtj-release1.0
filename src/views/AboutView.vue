@@ -136,7 +136,8 @@
     data: () => ({
       info: null,
       description_collapsed: true,
-      apiUrl: process.env.VUE_APP_API_URL
+      apiUrl: process.env.VUE_APP_API_URL,
+      role: 'dilnoza'
     }),
     methods: {
       addToCart(id) {
@@ -156,6 +157,22 @@
         .catch(e => {
           console.warn(e)
         })
+
+
+        if(localStorage.kitobtj !== undefined) {
+                let user_token = JSON.parse(localStorage.kitobtj).token
+                await axios.post(`${process.env.VUE_APP_API_URL}/getRole`, {user_token})
+                .then(r => {
+                    if(r.data.role == 'admin') {
+                        this.role = 'admin'
+                    } else {
+                        this.role = r.data.role
+                    }
+                    
+                })
+        }
+
+        
       }
     },
     async beforeMount() {
@@ -179,18 +196,9 @@
           }
         }
       },
-      async isAdmin() {
-        if(localStorage.kitobtj !== undefined) {
-                let user_token = JSON.parse(localStorage.kitobtj).token
-                await axios.post(`${process.env.VUE_APP_API_URL}/getRole`, {user_token})
-                .then(r => {
-                    if(r.data.role == 'admin') {
-                        return true
-                    } else {
-                      return false
-                    }
-                    
-                })
+      isAdmin() {
+        if(this.role == 'admin') {
+          return true
         } else {
           return false
         }
