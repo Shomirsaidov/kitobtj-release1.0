@@ -4,10 +4,10 @@
             <div class="flex justify-center flex-wrap space-x-4 items-start md:items-center">
                 <img src="../assets/abusha.jpg" class="rounded-xl" alt="" width="130" height="130"/>
                 <div class="p-4 space-y-2">
-                    <h1 class="text-xl font-bold">Шомирсаидов Абубакр</h1>
+                    <h1 class="text-xl font-bold">Shomirsaidov Abubakr</h1>
                     <h3 class="text-blue-700 font-bold">
-                        <nobr>| Разработчик ПО |</nobr><br>
-                        Раб, Сын, Ученик
+                        <nobr>| Software engineer |</nobr><br>
+                        Human, Son, Student
                     </h3>
                    
                 </div>
